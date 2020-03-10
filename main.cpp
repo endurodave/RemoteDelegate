@@ -11,6 +11,12 @@
 // 2) Try serializer
 // 3) Try interprocess communication 
 // 4) Unit tests
+// 5) Show example of how to call MakeDelegate for sending
+//      auto hhh = MakeDelegate<TestStruct**>(delegateCommUdp, stream, TEST_STRUCT_MSG_ID);
+//      hhh(ppts);
+// 6) Show example of inserting remote delegate into a delegate container
+// 7) Function .cpp header comments (for consistency with other code)
+// 8) Add new Code Project URL's to remote delegate files. 
 
 // main.cpp
 // @see https://www.codeproject.com/Articles/1160934/Asynchronous-Multicast-Delegates-in-Cplusplus
@@ -61,7 +67,7 @@ int main(void)
     TestRemoteUdpAsync::GetInstance().SendDataPoint(dataPoint);
 
     // Async send a notification to remote
-    RemoteNotification notification("Async Test!");
+    RemoteNotification notification("Async Notification Message!");
     TestRemoteUdpAsync::GetInstance().SendNotification(9, notification);
 
 	// Run all unit tests (uncomment to run unit tests)

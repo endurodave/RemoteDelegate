@@ -26,7 +26,6 @@ void UdpDelegateRecv::Initialize()
 unsigned long UdpDelegateRecv::Process(void* parameter)
 {  
     MSG msg;
-
     const int BUF_SIZE = 1024;
     char recvBuf[BUF_SIZE];
 

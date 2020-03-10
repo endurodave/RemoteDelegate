@@ -6,10 +6,11 @@
 #include "RemoteNotification.h"
 #include <iostream>
 
-/// @brief A class to show how ansynchonous incoming and outgoing interfaces
-/// btween remote systems. Remote send/recv and asynchronous delegates are used. 
-/// This class is both a sender and receiver to simplify running the sample
-/// code. Normally one CPU is a sender and another is receiver. 
+/// @brief A class to show ansynchonous incoming and outgoing interfaces
+/// between remote systems. Remote send/recv delegates and asynchronous 
+/// delegates are used. This class is both a sender and receiver to 
+/// simplify running the sample code. Normally one CPU is a sender and 
+/// another is receiver. 
 class TestRemoteUdpAsync
 {
 public:
@@ -38,11 +39,11 @@ private:
     // Binary stream of send data bytes
     std::ostringstream oss;
 
-    // Send delegates
+    // Remote send delegates
     DelegateLib::DelegateRemoteSend1<const RemoteDataPoint&> sendDataPointDelegate;
     DelegateLib::DelegateRemoteSend2<int, const RemoteNotification&> sendNotificationDelegate;
 
-    // Receive delegates 
+    // Remote receive delegates 
     DelegateLib::DelegateFreeRemoteRecv1<RemoteDataPoint&> recvDataPointDelegate;
     DelegateLib::DelegateMemberRemoteRecv2<TestRemoteUdpAsync, int, RemoteNotification&> recvNotificationDelegate;
 };

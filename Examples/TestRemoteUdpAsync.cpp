@@ -43,7 +43,7 @@ TestRemoteUdpAsync::TestRemoteUdpAsync() :
 void TestRemoteUdpAsync::SendDataPoint(const RemoteDataPoint& data)
 {
     // If caller is not executing on asyncWorkerThread then re-invoke 
-    // on the correct thread using a delegate
+    // the function call on the correct thread using a delegate
     if (ThreadWin::GetCurrentThreadId() != asyncWorkerThread.GetThreadId())
         return MakeDelegate(this, &TestRemoteUdpAsync::SendDataPoint, &asyncWorkerThread)(data);
 
@@ -54,7 +54,7 @@ void TestRemoteUdpAsync::SendDataPoint(const RemoteDataPoint& data)
 void TestRemoteUdpAsync::SendNotification(int count, const RemoteNotification& data)
 {
     // If caller is not executing on asyncWorkerThread then re-invoke 
-    // on the correct thread using a delegate
+    // the function call on the correct thread using a delegate
     if (ThreadWin::GetCurrentThreadId() != asyncWorkerThread.GetThreadId())
         return MakeDelegate(this, &TestRemoteUdpAsync::SendNotification, &asyncWorkerThread)(count, data);
 
@@ -66,7 +66,6 @@ void TestRemoteUdpAsync::RecvDataPointCb(RemoteDataPoint& data)
 {
     // Callback registered client(s), if any
     DataPointRcvd(data);
-
     cout << "TestRemoteUdpAsync::RecvDataPointCb: " << data.GetX() << " " << data.GetY() << endl;
 }
 
@@ -74,6 +73,5 @@ void TestRemoteUdpAsync::RecvNotificationCb(int count, RemoteNotification& data)
 {
     // Callback registered client(s), if any
     NotificationRcvd(count, data);
-
     cout << "TestRemoteUdpAsync::RecvNotificationCb: " << count << " " << data.GetMsg() << endl;
 }
