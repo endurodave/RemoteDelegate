@@ -119,6 +119,15 @@
     <ClInclude Include="..\..\Examples\TestRemoteUdpAsync.h">
       <Filter>Examples</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Examples\RemoteDataPointJson.h">
+      <Filter>Examples</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Examples\TestRemoteUdpJson.h">
+      <Filter>Examples</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Examples\RemoteNotificationJson.h">
+      <Filter>Examples</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\main.cpp" />
@@ -172,6 +181,15 @@
       <Filter>Examples</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Examples\TestRemoteUdpAsync.cpp">
+      <Filter>Examples</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Examples\RemoteDataPointJson.cpp">
+      <Filter>Examples</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Examples\TestRemoteUdpJson.cpp">
+      <Filter>Examples</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Examples\RemoteNotificationJson.cpp">
       <Filter>Examples</Filter>
     </ClCompile>
   </ItemGroup>

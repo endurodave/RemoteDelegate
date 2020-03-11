@@ -2,21 +2,21 @@
 #include "Fault.h"
 #include "TestRemoteUdp.h"
 #include "TestRemoteUdpAsync.h"
+#ifdef RAPID_JSON
+#include "TestRemoteUdpJson.h"
+#endif
 #include "UdpDelegateRecv.h"
 #include "UdpDelegateSend.h"
 #include "WorkerThreadWin.h"
+#include <iostream>
 
 // TODO 
-// 1) Try RapidJSON
-// 2) Try serializer
 // 3) Try interprocess communication 
 // 4) Unit tests
-// 5) Show example of how to call MakeDelegate for sending
-//      auto hhh = MakeDelegate<TestStruct**>(delegateCommUdp, stream, TEST_STRUCT_MSG_ID);
-//      hhh(ppts);
 // 6) Show example of inserting remote delegate into a delegate container
 // 7) Function .cpp header comments (for consistency with other code)
 // 8) Add new Code Project URL's to remote delegate files. 
+// 9) Rename UdpDelegateSend to DelegateSendUdp (same with recv)
 
 // main.cpp
 // @see https://www.codeproject.com/Articles/1160934/Asynchronous-Multicast-Delegates-in-Cplusplus
@@ -57,6 +57,12 @@ int main(void)
 
     // Run a simple test
     TestRemoteUdp();
+
+    // See RapidJSON_Readme.txt
+#ifdef RAPID_JSON
+    // Run a simple JSON test
+    TestRemoteUdpJson();
+#endif
 
     // Register for asynchronous callbacks on workerThread1
     TestRemoteUdpAsync::DataPointRcvd += MakeDelegate(&RecvDataPointCb, &workerThread1);

@@ -168,9 +168,12 @@
     <ClInclude Include="..\..\Delegate\SinglecastDelegate.h" />
     <ClInclude Include="..\..\Delegate\xallocator.h" />
     <ClInclude Include="..\..\Examples\RemoteDataPoint.h" />
+    <ClInclude Include="..\..\Examples\RemoteDataPointJson.h" />
     <ClInclude Include="..\..\Examples\RemoteNotification.h" />
+    <ClInclude Include="..\..\Examples\RemoteNotificationJson.h" />
     <ClInclude Include="..\..\Examples\TestRemoteUdp.h" />
     <ClInclude Include="..\..\Examples\TestRemoteUdpAsync.h" />
+    <ClInclude Include="..\..\Examples\TestRemoteUdpJson.h" />
     <ClInclude Include="..\..\Examples\UdpDelegateRecv.h" />
     <ClInclude Include="..\..\Examples\UdpDelegateSend.h" />
     <ClInclude Include="..\..\Port\DataTypes.h" />
@@ -192,9 +195,12 @@
     <ClCompile Include="..\..\Delegate\Semaphore.cpp" />
     <ClCompile Include="..\..\Delegate\xallocator.cpp" />
     <ClCompile Include="..\..\Examples\RemoteDataPoint.cpp" />
+    <ClCompile Include="..\..\Examples\RemoteDataPointJson.cpp" />
     <ClCompile Include="..\..\Examples\RemoteNotification.cpp" />
+    <ClCompile Include="..\..\Examples\RemoteNotificationJson.cpp" />
     <ClCompile Include="..\..\Examples\TestRemoteUdp.cpp" />
     <ClCompile Include="..\..\Examples\TestRemoteUdpAsync.cpp" />
+    <ClCompile Include="..\..\Examples\TestRemoteUdpJson.cpp" />
     <ClCompile Include="..\..\Examples\UdpDelegateRecv.cpp" />
     <ClCompile Include="..\..\Examples\UdpDelegateSend.cpp" />
     <ClCompile Include="..\..\main.cpp" />

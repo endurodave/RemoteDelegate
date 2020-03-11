@@ -35,15 +35,28 @@ void TestRemoteUdp()
     // Binary stream of send data bytes
     ostringstream oss(ios::in | ios::out | ios::binary);
 
-    // Send delegates 
-    DelegateRemoteSend1<RemoteDataPoint*>
+#if 1
+    // Send delegates (using MakeDelegate)
+    auto sendDataPointDelegate =
+        MakeDelegate<RemoteDataPoint*>(UpdDelegateSend::GetInstance(), oss, REMOTE_DATA_POINT_ID);
+    auto sendNotificationDelegate =
+        MakeDelegate<int, RemoteNotification&>(UpdDelegateSend::GetInstance(), oss, REMOTE_NOTIFICATION_ID);
+
+    // Receive delegates (using MakeDelegate)
+    auto recvDataPointDelegate = MakeDelegate(&RecvDataPointCb, REMOTE_DATA_POINT_ID);
+    auto recvNotificationDelegate = MakeDelegate(&RecvNotificationCb, REMOTE_NOTIFICATION_ID);
+#else
+    // Send delegates (no MakeDelegate)
+    DelegateRemoteSend1<RemoteDataPoint*> 
         sendDataPointDelegate(UpdDelegateSend::GetInstance(), oss, REMOTE_DATA_POINT_ID);
     DelegateRemoteSend2<int, RemoteNotification&>
         sendNotificationDelegate(UpdDelegateSend::GetInstance(), oss, REMOTE_NOTIFICATION_ID);
 
-    // Receive delegates 
-    auto recvDataPointDelegate = MakeDelegate(&RecvDataPointCb, REMOTE_DATA_POINT_ID);
-    auto recvNotificationDelegate = MakeDelegate(&RecvNotificationCb, REMOTE_NOTIFICATION_ID);
+    // Receive delegates (no MakeDelegate)
+    DelegateFreeRemoteRecv1<RemoteDataPoint*> recvDataPointDelegate(&RecvDataPointCb, REMOTE_DATA_POINT_ID);
+    DelegateFreeRemoteRecv2<int, RemoteNotification&> recvNotificationDelegate(&RecvNotificationCb, REMOTE_NOTIFICATION_ID);
+
+#endif
 
     int x = 100;
     int y = 9990;
