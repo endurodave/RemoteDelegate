@@ -116,9 +116,6 @@
     <ClInclude Include="..\..\Examples\TestRemoteUdp.h">
       <Filter>Examples</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Examples\TestRemoteUdpAsync.h">
-      <Filter>Examples</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Examples\RemoteDataPointJson.h">
       <Filter>Examples</Filter>
     </ClInclude>
@@ -126,6 +123,24 @@
       <Filter>Examples</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Examples\RemoteNotificationJson.h">
+      <Filter>Examples</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Examples\TestRemoteUdpAsyncRecv.h">
+      <Filter>Examples</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Examples\TestRemoteUdpAsyncSend.h">
+      <Filter>Examples</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Examples\SysData.h">
+      <Filter>Examples</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Examples\SysDataTypes.h">
+      <Filter>Examples</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Examples\TestSysData.h">
+      <Filter>Examples</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Examples\RemoteId.h">
       <Filter>Examples</Filter>
     </ClInclude>
   </ItemGroup>
@@ -180,9 +195,6 @@
     <ClCompile Include="..\..\Examples\TestRemoteUdp.cpp">
       <Filter>Examples</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Examples\TestRemoteUdpAsync.cpp">
-      <Filter>Examples</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Examples\RemoteDataPointJson.cpp">
       <Filter>Examples</Filter>
     </ClCompile>
@@ -190,6 +202,18 @@
       <Filter>Examples</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Examples\RemoteNotificationJson.cpp">
+      <Filter>Examples</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Examples\TestRemoteUdpAsyncRecv.cpp">
+      <Filter>Examples</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Examples\TestRemoteUdpAsyncSend.cpp">
+      <Filter>Examples</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Examples\SysData.cpp">
+      <Filter>Examples</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Examples\TestSysData.cpp">
       <Filter>Examples</Filter>
     </ClCompile>
   </ItemGroup>

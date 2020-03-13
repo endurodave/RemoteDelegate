@@ -88,7 +88,7 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>RAPID_JSON;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(SolutionDir)..\.;$(SolutionDir)..\Examples;$(SolutionDir)..\Delegate;$(SolutionDir)..\Port;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
@@ -169,11 +169,16 @@
     <ClInclude Include="..\..\Delegate\xallocator.h" />
     <ClInclude Include="..\..\Examples\RemoteDataPoint.h" />
     <ClInclude Include="..\..\Examples\RemoteDataPointJson.h" />
+    <ClInclude Include="..\..\Examples\RemoteId.h" />
     <ClInclude Include="..\..\Examples\RemoteNotification.h" />
     <ClInclude Include="..\..\Examples\RemoteNotificationJson.h" />
+    <ClInclude Include="..\..\Examples\SysData.h" />
+    <ClInclude Include="..\..\Examples\SysDataTypes.h" />
     <ClInclude Include="..\..\Examples\TestRemoteUdp.h" />
-    <ClInclude Include="..\..\Examples\TestRemoteUdpAsync.h" />
+    <ClInclude Include="..\..\Examples\TestRemoteUdpAsyncRecv.h" />
+    <ClInclude Include="..\..\Examples\TestRemoteUdpAsyncSend.h" />
     <ClInclude Include="..\..\Examples\TestRemoteUdpJson.h" />
+    <ClInclude Include="..\..\Examples\TestSysData.h" />
     <ClInclude Include="..\..\Examples\UdpDelegateRecv.h" />
     <ClInclude Include="..\..\Examples\UdpDelegateSend.h" />
     <ClInclude Include="..\..\Port\DataTypes.h" />
@@ -198,9 +203,12 @@
     <ClCompile Include="..\..\Examples\RemoteDataPointJson.cpp" />
     <ClCompile Include="..\..\Examples\RemoteNotification.cpp" />
     <ClCompile Include="..\..\Examples\RemoteNotificationJson.cpp" />
+    <ClCompile Include="..\..\Examples\SysData.cpp" />
     <ClCompile Include="..\..\Examples\TestRemoteUdp.cpp" />
-    <ClCompile Include="..\..\Examples\TestRemoteUdpAsync.cpp" />
+    <ClCompile Include="..\..\Examples\TestRemoteUdpAsyncRecv.cpp" />
+    <ClCompile Include="..\..\Examples\TestRemoteUdpAsyncSend.cpp" />
     <ClCompile Include="..\..\Examples\TestRemoteUdpJson.cpp" />
+    <ClCompile Include="..\..\Examples\TestSysData.cpp" />
     <ClCompile Include="..\..\Examples\UdpDelegateRecv.cpp" />
     <ClCompile Include="..\..\Examples\UdpDelegateSend.cpp" />
     <ClCompile Include="..\..\main.cpp" />

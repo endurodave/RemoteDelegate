@@ -3,7 +3,6 @@
 
 #ifdef RAPID_JSON
 
-#include "rapidjson/include/rapidjson/writer.h"
 #include <sstream>
 
 /// @brief Shared data structure to send between remote systems. 
@@ -18,14 +17,6 @@ public:
     int GetX() const { return m_x; }
     int GetY() const { return m_y; }
 
-private:
-    int m_x;
-    int m_y;
-
-    // Support send/recv of RemoteDataPointJson& args using remote delegates
-    friend std::ostream& operator<< (std::ostream &out, const RemoteDataPointJson& data);
-    friend std::istream& operator>> (std::istream &in, RemoteDataPointJson& data);
-
     template <typename Writer>
     void Serialize(Writer& writer) const
     {
@@ -38,6 +29,14 @@ private:
 
         writer.EndObject();
     }
+
+private:
+    int m_x;
+    int m_y;
+
+    // Support send/recv of RemoteDataPointJson& args using remote delegates
+    friend std::ostream& operator<< (std::ostream &out, const RemoteDataPointJson& data);
+    friend std::istream& operator>> (std::istream &in, RemoteDataPointJson& data);
 };
 
 #endif // RAPID_JSON

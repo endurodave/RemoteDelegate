@@ -59,6 +59,7 @@ void TestRemoteUdpJson()
 
         // Send notification to remote system
         RemoteNotificationJson notification("Hello World!");
+        notification.GetPoints().push_back(dataPoint);
         sendNotificationDelegate(count++, notification);
 
         Sleep(100);

@@ -6,6 +6,7 @@
 #include "DelegateLib.h"
 #include "UdpDelegateRecv.h"
 #include "UdpDelegateSend.h"
+#include <sstream>
 #include <iostream>
 
 // This is a simple example of a remote send and receive delegate

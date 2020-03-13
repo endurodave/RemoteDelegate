@@ -45,6 +45,13 @@ std::istream& operator>> (std::istream &in, RemoteNotificationJson& data)
     // Get JSON values into object variables
     data.m_msg = d["m_msg"].GetString();
 
+    const Value& points = d["m_points"];
+    for (auto& point : points.GetArray())
+    {
+        RemoteDataPointJson p(point["m_x"].GetInt(), point["m_y"].GetInt());
+        data.m_points.push_back(p);
+    }
+
     free(buf);
     return in;
 }
