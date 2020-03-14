@@ -49,7 +49,7 @@ void PipeDelegateSend::DispatchDelegate(std::iostream& s)
     // Send message through named pipe
     DWORD sentLen = 0;
     BOOL success = WriteFile(m_hPipe, sendBuf, len, &sentLen, NULL);
-    ASSERT_TRUE(success);
+    ASSERT_TRUE(success && sentLen == len);
 
     free(sendBuf);
 
