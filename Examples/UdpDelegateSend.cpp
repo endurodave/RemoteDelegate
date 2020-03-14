@@ -6,22 +6,22 @@
 using namespace DelegateLib;
 using namespace std;
 
-UpdDelegateSend & UpdDelegateSend::GetInstance()
+UdpDelegateSend & UdpDelegateSend::GetInstance()
 {
-    static UpdDelegateSend instance;
+    static UdpDelegateSend instance;
     return instance;
 }
 
-UpdDelegateSend::UpdDelegateSend()
+UdpDelegateSend::UdpDelegateSend()
 {
 }
 
-UpdDelegateSend::~UpdDelegateSend()
+UdpDelegateSend::~UdpDelegateSend()
 {
     m_sendSocket.Close();
 }
 
-void UpdDelegateSend::Initialize()
+void UdpDelegateSend::Initialize()
 {
     BOOL success = m_sendSocket.Create(0, SOCK_DGRAM, NULL);
     ASSERT_TRUE(success);
@@ -30,7 +30,7 @@ void UpdDelegateSend::Initialize()
     ASSERT_TRUE(success);
 }
 
-void UpdDelegateSend::DispatchDelegate(std::iostream& s)
+void UdpDelegateSend::DispatchDelegate(std::iostream& s)
 {
     size_t len = (size_t)s.tellp();
     char* sendBuf = (char*)malloc(len);

@@ -18,8 +18,8 @@ RemoteUdpAsyncSend& RemoteUdpAsyncSend::GetInstance()
 
 RemoteUdpAsyncSend::RemoteUdpAsyncSend() :
     ss(ios::in | ios::out | ios::binary),
-    sendDataPointDelegate(UpdDelegateSend::GetInstance(), ss, REMOTE_DATA_POINT_ID),
-    sendNotificationDelegate(UpdDelegateSend::GetInstance(), ss, REMOTE_NOTIFICATION_ID)
+    sendDataPointDelegate(UdpDelegateSend::GetInstance(), ss, REMOTE_DATA_POINT_ID),
+    sendNotificationDelegate(UdpDelegateSend::GetInstance(), ss, REMOTE_NOTIFICATION_ID)
 {
     asyncWorkerThread.CreateThread();
 }

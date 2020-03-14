@@ -1,5 +1,6 @@
 #ifdef RAPID_JSON
 
+#include "Fault.h"
 #include "RemoteNotificationJson.h"
 #include "rapidjson/include/rapidjson/prettywriter.h"
 #include "rapidjson/include/rapidjson/document.h"
@@ -34,6 +35,7 @@ std::istream& operator>> (std::istream &in, RemoteNotificationJson& data)
 
     // Allocate storage buffer
     char* buf = (char*)malloc(bufLen);
+    ASSERT_TRUE(buf != NULL);
 
     // Copy JSON into buffer 
     in.rdbuf()->sgetn(buf, bufLen);

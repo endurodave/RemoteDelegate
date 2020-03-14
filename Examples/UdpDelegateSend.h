@@ -5,10 +5,10 @@
 #include <ostream>
 
 /// @brief Sends a delegate to a remote system using a UDP socket.  
-class UpdDelegateSend : public DelegateLib::DelegateTransport
+class UdpDelegateSend : public DelegateLib::DelegateTransport
 {
 public:
-    static UpdDelegateSend & GetInstance();
+    static UdpDelegateSend & GetInstance();
 
     /// Call one time during startup
     void Initialize();
@@ -18,8 +18,8 @@ public:
     virtual void DispatchDelegate(std::iostream& s);
 
 private:
-    UpdDelegateSend();
-    virtual ~UpdDelegateSend();
+    UdpDelegateSend();
+    virtual ~UdpDelegateSend();
 
     CAsyncSocket m_sendSocket;
 };

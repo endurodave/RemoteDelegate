@@ -34,7 +34,7 @@ void TestSysData()
 
     // Register to send a remote callback
     SysData::SystemModeChangedDelegate +=
-        MakeDelegate<const SystemModeChanged&>(UpdDelegateSend::GetInstance(), ss, REMOTE_SYSTEM_MODE_CHANGED_ID);
+        MakeDelegate<const SystemModeChanged&>(UdpDelegateSend::GetInstance(), ss, REMOTE_SYSTEM_MODE_CHANGED_ID);
 
     // Create a receive delegate to receive remote callback
     auto recvDataPointDelegate = MakeDelegate(&SystemModeChangedCb, REMOTE_SYSTEM_MODE_CHANGED_ID);
@@ -59,7 +59,7 @@ void TestSysData()
     SysData::SystemModeChangedDelegate -= MakeDelegate(&SystemModeChangedCb, &sysDataWorkerThread);
     SysData::SystemModeChangedDelegate -= MakeDelegate(&SystemModeChangedCb, &sysDataWorkerThread, 5000);
     SysData::SystemModeChangedDelegate -=
-        MakeDelegate<const SystemModeChanged&>(UpdDelegateSend::GetInstance(), ss, REMOTE_SYSTEM_MODE_CHANGED_ID);
+        MakeDelegate<const SystemModeChanged&>(UdpDelegateSend::GetInstance(), ss, REMOTE_SYSTEM_MODE_CHANGED_ID);
 
     sysDataWorkerThread.ExitThread();
 }

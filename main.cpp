@@ -29,7 +29,7 @@ int main(void)
     result = AfxSocketInit(NULL);
     ASSERT_TRUE(result == TRUE);
 
-    UpdDelegateSend::GetInstance().Initialize();
+    UdpDelegateSend::GetInstance().Initialize();
     UdpDelegateRecv::GetInstance().Initialize();
 
     // Run a simple test

@@ -39,9 +39,9 @@ void TestRemoteUdp()
 #if 1
     // Send delegates (using MakeDelegate)
     auto sendDataPointDelegate =
-        MakeDelegate<RemoteDataPoint*>(UpdDelegateSend::GetInstance(), ss, REMOTE_DATA_POINT_ID);
+        MakeDelegate<RemoteDataPoint*>(UdpDelegateSend::GetInstance(), ss, REMOTE_DATA_POINT_ID);
     auto sendNotificationDelegate =
-        MakeDelegate<int, RemoteNotification&>(UpdDelegateSend::GetInstance(), ss, REMOTE_NOTIFICATION_ID);
+        MakeDelegate<int, RemoteNotification&>(UdpDelegateSend::GetInstance(), ss, REMOTE_NOTIFICATION_ID);
 
     // Receive delegates (using MakeDelegate)
     auto recvDataPointDelegate = MakeDelegate(&RecvDataPointCb, REMOTE_DATA_POINT_ID);

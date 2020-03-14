@@ -39,9 +39,9 @@ void TestRemoteUdpJson()
 
     // Send delegates
     auto sendDataPointDelegate =
-        MakeDelegate<RemoteDataPointJson&>(UpdDelegateSend::GetInstance(), ss, REMOTE_DATA_POINT_JSON_ID);
+        MakeDelegate<RemoteDataPointJson&>(UdpDelegateSend::GetInstance(), ss, REMOTE_DATA_POINT_JSON_ID);
     auto sendNotificationDelegate =
-        MakeDelegate<int, RemoteNotificationJson&>(UpdDelegateSend::GetInstance(), ss, REMOTE_NOTIFICATION_JSON_ID);
+        MakeDelegate<int, RemoteNotificationJson&>(UdpDelegateSend::GetInstance(), ss, REMOTE_NOTIFICATION_JSON_ID);
 
     // Receive delegates
     auto recvDataPointDelegate = MakeDelegate(&RecvDataPointJsonCb, REMOTE_DATA_POINT_JSON_ID);
