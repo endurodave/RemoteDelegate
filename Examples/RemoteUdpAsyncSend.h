@@ -1,5 +1,5 @@
-#ifndef _TEST_REMOTE_UDP_ASYNC_SEND_H
-#define _TEST_REMOTE_UDP_ASYNC_SEND_H
+#ifndef _REMOTE_UDP_ASYNC_SEND_H
+#define _REMOTE_UDP_ASYNC_SEND_H
 
 #include "DelegateLib.h"
 #include "RemoteDataPoint.h"
@@ -8,10 +8,10 @@
 
 /// @brief A class to send ansynchonously send outgoing remote delegates to 
 /// a remote system using UDP.  
-class TestRemoteUdpAsyncSend
+class RemoteUdpAsyncSend
 {
 public:
-    static TestRemoteUdpAsyncSend& GetInstance();
+    static RemoteUdpAsyncSend& GetInstance();
 
     // Asynchronously send a data point to remote system
     void SendDataPoint(const RemoteDataPoint& data);
@@ -20,8 +20,8 @@ public:
     void SendNotification(int count, const RemoteNotification& data);
 
 private:
-    TestRemoteUdpAsyncSend();
-    ~TestRemoteUdpAsyncSend();
+    RemoteUdpAsyncSend();
+    ~RemoteUdpAsyncSend();
 
     // Binary stream of send data bytes
     std::ostringstream oss;

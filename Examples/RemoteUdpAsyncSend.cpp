@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "TestRemoteUdpAsyncSend.h"
+#include "RemoteUdpAsyncSend.h"
 #include "RemoteId.h"
 #include "DelegateLib.h"
 #include "UdpDelegateRecv.h"
@@ -10,13 +10,13 @@ using namespace std;
 
 static WorkerThread asyncWorkerThread("asyncWorkerThread");
 
-TestRemoteUdpAsyncSend& TestRemoteUdpAsyncSend::GetInstance()
+RemoteUdpAsyncSend& RemoteUdpAsyncSend::GetInstance()
 {
-    static TestRemoteUdpAsyncSend instance;
+    static RemoteUdpAsyncSend instance;
     return instance;
 }
 
-TestRemoteUdpAsyncSend::TestRemoteUdpAsyncSend() :
+RemoteUdpAsyncSend::RemoteUdpAsyncSend() :
     oss(ios::in | ios::out | ios::binary),
     sendDataPointDelegate(UpdDelegateSend::GetInstance(), oss, REMOTE_DATA_POINT_ID),
     sendNotificationDelegate(UpdDelegateSend::GetInstance(), oss, REMOTE_NOTIFICATION_ID)
@@ -24,30 +24,30 @@ TestRemoteUdpAsyncSend::TestRemoteUdpAsyncSend() :
     asyncWorkerThread.CreateThread();
 }
 
-TestRemoteUdpAsyncSend::~TestRemoteUdpAsyncSend()
+RemoteUdpAsyncSend::~RemoteUdpAsyncSend()
 {
     asyncWorkerThread.ExitThread();
 }
 
-void TestRemoteUdpAsyncSend::SendDataPoint(const RemoteDataPoint& data)
+void RemoteUdpAsyncSend::SendDataPoint(const RemoteDataPoint& data)
 {
     // If caller is not executing on asyncWorkerThread then re-invoke 
     // the function call on the correct thread using a delegate.
     // Delete these two lines if prefer synchronous sending. 
     if (ThreadWin::GetCurrentThreadId() != asyncWorkerThread.GetThreadId())
-        return MakeDelegate(this, &TestRemoteUdpAsyncSend::SendDataPoint, &asyncWorkerThread)(data);
+        return MakeDelegate(this, &RemoteUdpAsyncSend::SendDataPoint, &asyncWorkerThread)(data);
 
     // Sending data to remote is always executed on asyncWorkerThread
     sendDataPointDelegate(data);
 }
 
-void TestRemoteUdpAsyncSend::SendNotification(int count, const RemoteNotification& data)
+void RemoteUdpAsyncSend::SendNotification(int count, const RemoteNotification& data)
 {
     // If caller is not executing on asyncWorkerThread then re-invoke 
     // the function call on the correct thread using a delegate.
     // Delete these two lines if prefer synchronous sending. 
     if (ThreadWin::GetCurrentThreadId() != asyncWorkerThread.GetThreadId())
-        return MakeDelegate(this, &TestRemoteUdpAsyncSend::SendNotification, &asyncWorkerThread)(count, data);
+        return MakeDelegate(this, &RemoteUdpAsyncSend::SendNotification, &asyncWorkerThread)(count, data);
 
     // Sending data to remote is always executed on asyncWorkerThread
     sendNotificationDelegate(count, data);

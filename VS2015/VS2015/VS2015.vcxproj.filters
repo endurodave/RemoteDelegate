@@ -125,12 +125,6 @@
     <ClInclude Include="..\..\Examples\RemoteNotificationJson.h">
       <Filter>Examples</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Examples\TestRemoteUdpAsyncRecv.h">
-      <Filter>Examples</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Examples\TestRemoteUdpAsyncSend.h">
-      <Filter>Examples</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Examples\SysData.h">
       <Filter>Examples</Filter>
     </ClInclude>
@@ -141,6 +135,15 @@
       <Filter>Examples</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Examples\RemoteId.h">
+      <Filter>Examples</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Examples\RemoteUdpAsyncRecv.h">
+      <Filter>Examples</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Examples\RemoteUdpAsyncSend.h">
+      <Filter>Examples</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Examples\TestRemoteUdpAsync.h">
       <Filter>Examples</Filter>
     </ClInclude>
   </ItemGroup>
@@ -204,16 +207,19 @@
     <ClCompile Include="..\..\Examples\RemoteNotificationJson.cpp">
       <Filter>Examples</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Examples\TestRemoteUdpAsyncRecv.cpp">
-      <Filter>Examples</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Examples\TestRemoteUdpAsyncSend.cpp">
-      <Filter>Examples</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Examples\SysData.cpp">
       <Filter>Examples</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Examples\TestSysData.cpp">
+      <Filter>Examples</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Examples\RemoteUdpAsyncRecv.cpp">
+      <Filter>Examples</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Examples\RemoteUdpAsyncSend.cpp">
+      <Filter>Examples</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Examples\TestRemoteUdpAsync.cpp">
       <Filter>Examples</Filter>
     </ClCompile>
   </ItemGroup>

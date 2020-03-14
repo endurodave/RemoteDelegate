@@ -62,8 +62,10 @@ void TestRemoteUdpJson()
         notification.GetPoints().push_back(dataPoint);
         sendNotificationDelegate(count++, notification);
 
-        Sleep(100);
+        Sleep(1000);
     }
+
+    Sleep(1000);
 }
 
 #endif // RAPID_JSON

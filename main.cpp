@@ -2,8 +2,7 @@
 #include "Fault.h"
 #include "TestRemoteUdp.h"
 #include "TestSysData.h"
-#include "TestRemoteUdpAsyncSend.h"
-#include "TestRemoteUdpAsyncRecv.h"
+#include "TestRemoteUdpAsync.h"
 #ifdef RAPID_JSON
 #include "TestRemoteUdpJson.h"
 #endif
@@ -12,25 +11,16 @@
 #include "WorkerThreadWin.h"
 #include <iostream>
 
+// TODO - need to clear stream?
+// TODO - test over long periods at full speed for leaks, etc...
+
 // main.cpp
 // @see https://www.codeproject.com/Articles/1160934/Asynchronous-Multicast-Delegates-in-Cplusplus
 // David Lafreniere, Mar 2020.
 
 using namespace std;
 
-WorkerThread workerThread1("workerThread1");
-
 extern void DelegateUnitTests();
-
-static void RecvDataPointCb(const RemoteDataPoint& data)
-{
-    cout << "WorkerThread1 RecvDataPointCb: " << data.GetX() << " " << data.GetY() << endl;
-}
-
-static void RecvNotificationCb(int count, const RemoteNotification& data)
-{
-    cout << "WorkerThread1 RecvNotificationCb: " << count << " " << data.GetMsg() << endl;
-}
 
 //------------------------------------------------------------------------------
 // main
@@ -46,14 +36,14 @@ int main(void)
     UpdDelegateSend::GetInstance().Initialize();
     UdpDelegateRecv::GetInstance().Initialize();
 
-    workerThread1.CreateThread();
-    WorkerThread::StartAllThreads();
-
     // Run a simple test
-    TestRemoteUdp();
+    //TestRemoteUdp();
+
+    // Run a simple async test
+    //TestRemoteUdpAsync();
 
     // Run a test using SysData
-    TestSysData();
+    //TestSysData();
 
     // See RapidJSON_Readme.txt
 #ifdef RAPID_JSON
@@ -61,31 +51,10 @@ int main(void)
     TestRemoteUdpJson();
 #endif
 
-    TestRemoteUdpAsyncRecv::GetInstance();
-    TestRemoteUdpAsyncSend::GetInstance();
-
-    // Register for asynchronous callbacks on workerThread1
-    TestRemoteUdpAsyncRecv::DataPointRcvd += MakeDelegate(&RecvDataPointCb, &workerThread1);
-    TestRemoteUdpAsyncRecv::NotificationRcvd += MakeDelegate(&RecvNotificationCb, &workerThread1);
-
-    // Async send a data point to remote
-    RemoteDataPoint dataPoint(111, 222);
-    TestRemoteUdpAsyncSend::GetInstance().SendDataPoint(dataPoint);
-
-    // Async send a notification to remote
-    RemoteNotification notification("Async Notification Message!");
-    TestRemoteUdpAsyncSend::GetInstance().SendNotification(9, notification);
-
 	// Run all unit tests (uncomment to run unit tests)
 	//DelegateUnitTests();
 
     Sleep(1000);
-
-    // Cleanup
-    workerThread1.ExitThread();
-    TestRemoteUdpAsyncRecv::DataPointRcvd -= MakeDelegate(&RecvDataPointCb, &workerThread1);
-    TestRemoteUdpAsyncRecv::NotificationRcvd -= MakeDelegate(&RecvNotificationCb, &workerThread1);
-
 	return 0;
 }
 
