@@ -43,14 +43,14 @@ int main(void)
     // Run a named pipe test
     TestRemotePipe();
 
-    // Run an async test
-    TestRemoteUdpAsync();
-
     // See RapidJSON_Readme.txt
 #ifdef RAPID_JSON
     // Run a JSON test
     TestRemoteUdpJson();
 #endif
+
+    // Run an async test
+    TestRemoteUdpAsync();
 
     // Run a test using SysData
     TestSysData();

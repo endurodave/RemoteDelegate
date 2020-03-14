@@ -57,7 +57,7 @@ int main(void)
 
 #ifdef RAPID_JSON
         // Send notification to remote system
-        RemoteNotificationJson notification("Send Data Point!");
+        RemoteNotificationJson notification("RPC using UDP and JSON!");
         notification.GetPoints().push_back(RemoteDataPointJson(x, y));
         sendNotificationDelegate(count++, notification);
 #endif
