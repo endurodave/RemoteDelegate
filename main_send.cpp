@@ -30,8 +30,10 @@ int main(void)
 
     UdpDelegateSend::GetInstance().Initialize();
 
+    // Create a stream to hold send data
     stringstream ss(ios::in | ios::out | ios::binary);
 
+    // Create a send remote delegate
     auto sendDataPointDelegate =
         MakeDelegate<RemoteDataPoint&>(UdpDelegateSend::GetInstance(), ss, REMOTE_DATA_POINT_ID);
 
@@ -59,6 +61,7 @@ int main(void)
         notification.GetPoints().push_back(RemoteDataPointJson(x, y));
         sendNotificationDelegate(count++, notification);
 #endif
+        Sleep(5);
     }
 
 	return 0;
