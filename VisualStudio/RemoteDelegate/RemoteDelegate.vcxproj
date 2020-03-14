@@ -168,6 +168,8 @@
     <ClInclude Include="..\..\Delegate\Semaphore.h" />
     <ClInclude Include="..\..\Delegate\SinglecastDelegate.h" />
     <ClInclude Include="..\..\Delegate\xallocator.h" />
+    <ClInclude Include="..\..\Examples\PipeDelegateRecv.h" />
+    <ClInclude Include="..\..\Examples\PipeDelegateSend.h" />
     <ClInclude Include="..\..\Examples\RemoteDataPoint.h" />
     <ClInclude Include="..\..\Examples\RemoteDataPointJson.h" />
     <ClInclude Include="..\..\Examples\RemoteId.h" />
@@ -177,6 +179,7 @@
     <ClInclude Include="..\..\Examples\RemoteUdpAsyncSend.h" />
     <ClInclude Include="..\..\Examples\SysData.h" />
     <ClInclude Include="..\..\Examples\SysDataTypes.h" />
+    <ClInclude Include="..\..\Examples\TestRemotePipe.h" />
     <ClInclude Include="..\..\Examples\TestRemoteUdp.h" />
     <ClInclude Include="..\..\Examples\TestRemoteUdpAsync.h" />
     <ClInclude Include="..\..\Examples\TestRemoteUdpJson.h" />
@@ -201,6 +204,8 @@
     <ClCompile Include="..\..\Delegate\MulticastDelegateBase.cpp" />
     <ClCompile Include="..\..\Delegate\Semaphore.cpp" />
     <ClCompile Include="..\..\Delegate\xallocator.cpp" />
+    <ClCompile Include="..\..\Examples\PipeDelegateRecv.cpp" />
+    <ClCompile Include="..\..\Examples\PipeDelegateSend.cpp" />
     <ClCompile Include="..\..\Examples\RemoteDataPoint.cpp" />
     <ClCompile Include="..\..\Examples\RemoteDataPointJson.cpp" />
     <ClCompile Include="..\..\Examples\RemoteNotification.cpp" />
@@ -208,6 +213,7 @@
     <ClCompile Include="..\..\Examples\RemoteUdpAsyncRecv.cpp" />
     <ClCompile Include="..\..\Examples\RemoteUdpAsyncSend.cpp" />
     <ClCompile Include="..\..\Examples\SysData.cpp" />
+    <ClCompile Include="..\..\Examples\TestRemotePipe.cpp" />
     <ClCompile Include="..\..\Examples\TestRemoteUdp.cpp" />
     <ClCompile Include="..\..\Examples\TestRemoteUdpAsync.cpp" />
     <ClCompile Include="..\..\Examples\TestRemoteUdpJson.cpp" />

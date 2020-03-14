@@ -146,6 +146,15 @@
     <ClInclude Include="..\..\Examples\TestRemoteUdpAsync.h">
       <Filter>Examples</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Examples\PipeDelegateSend.h">
+      <Filter>Examples</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Examples\PipeDelegateRecv.h">
+      <Filter>Examples</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Examples\TestRemotePipe.h">
+      <Filter>Examples</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\main.cpp" />
@@ -220,6 +229,15 @@
       <Filter>Examples</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Examples\TestRemoteUdpAsync.cpp">
+      <Filter>Examples</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Examples\PipeDelegateSend.cpp">
+      <Filter>Examples</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Examples\PipeDelegateRecv.cpp">
+      <Filter>Examples</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Examples\TestRemotePipe.cpp">
       <Filter>Examples</Filter>
     </ClCompile>
   </ItemGroup>

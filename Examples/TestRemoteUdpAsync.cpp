@@ -43,7 +43,7 @@ void TestRemoteUdpAsync()
     RemoteUdpAsyncSend::GetInstance().SendDataPoint(dataPoint);
 
     // Async send a notification to remote
-    RemoteNotification notification("Async Notification Message!");
+    RemoteNotification notification("Async RPC using UDP!");
     RemoteUdpAsyncSend::GetInstance().SendNotification(9, notification);
 
     Sleep(1000);

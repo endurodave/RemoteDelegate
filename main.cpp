@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "Fault.h"
 #include "TestRemoteUdp.h"
+#include "TestRemotePipe.h"
 #include "TestSysData.h"
 #include "TestRemoteUdpAsync.h"
 #ifdef RAPID_JSON
@@ -8,6 +9,8 @@
 #endif
 #include "UdpDelegateRecv.h"
 #include "UdpDelegateSend.h"
+#include "PipeDelegateRecv.h"
+#include "PipeDelegateSend.h"
 #include <iostream>
 
 // main.cpp
@@ -29,23 +32,28 @@ int main(void)
     result = AfxSocketInit(NULL);
     ASSERT_TRUE(result == TRUE);
 
-    UdpDelegateSend::GetInstance().Initialize();
     UdpDelegateRecv::GetInstance().Initialize();
+    UdpDelegateSend::GetInstance().Initialize();
+    PipeDelegateRecv::GetInstance().Initialize();
+    PipeDelegateSend::GetInstance().Initialize();
 
     // Run a simple test
     TestRemoteUdp();
 
-    // Run a simple async test
-    TestRemoteUdpAsync();
+    // Run a named pipe test
+    TestRemotePipe();
 
-    // Run a test using SysData
-    TestSysData();
+    // Run an async test
+    TestRemoteUdpAsync();
 
     // See RapidJSON_Readme.txt
 #ifdef RAPID_JSON
-    // Run a simple JSON test
+    // Run a JSON test
     TestRemoteUdpJson();
 #endif
+
+    // Run a test using SysData
+    TestSysData();
 
 	// Run all unit tests (uncomment to run unit tests)
 	//DelegateUnitTests();

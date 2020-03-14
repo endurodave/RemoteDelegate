@@ -63,14 +63,14 @@ void TestRemoteUdp()
     int y = 9990;
     int count = 1;
 
-    for (int i = 0; i < 10; i++)
+    for (int i = 0; i < 5; i++)
     {
         // Send data point to remote system
         RemoteDataPoint dataPoint(x++, y++);
         sendDataPointDelegate(&dataPoint);
 
         // Send notification to remote system
-        RemoteNotification notification("Hello World!");
+        RemoteNotification notification("RPC using UDP!");
         sendNotificationDelegate(count++, notification);
     }
 

@@ -51,14 +51,14 @@ void TestRemoteUdpJson()
     int y = 9990;
     int count = 1;
 
-    for (int i = 0; i < 10; i++)
+    for (int i = 0; i < 5; i++)
     {
         // Send data point to remote system
         RemoteDataPointJson dataPoint(x++, y++);
         sendDataPointDelegate(dataPoint);
 
         // Send notification to remote system
-        RemoteNotificationJson notification("Hello World!");
+        RemoteNotificationJson notification("RPC using UDP and JSON!");
         notification.GetPoints().push_back(dataPoint);
         sendNotificationDelegate(count++, notification);
     }
