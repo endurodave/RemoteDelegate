@@ -21,6 +21,10 @@ UdpDelegateRecv::~UdpDelegateRecv()
 void UdpDelegateRecv::Initialize()
 {
     CreateThread();
+
+    // Wait thread and socket to initialize
+    while (!m_started)
+        Sleep(10);
 }
 
 unsigned long UdpDelegateRecv::Process(void* parameter)
@@ -37,6 +41,8 @@ unsigned long UdpDelegateRecv::Process(void* parameter)
 
     success = m_recvSocket.Create(514, SOCK_DGRAM, NULL);
     ASSERT_TRUE(success);
+
+    m_started = true;
 
     for (;;)
     {

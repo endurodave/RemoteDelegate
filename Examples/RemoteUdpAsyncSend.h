@@ -4,7 +4,7 @@
 #include "DelegateLib.h"
 #include "RemoteDataPoint.h"
 #include "RemoteNotification.h"
-#include <iostream>
+#include <sstream>
 
 /// @brief A class to send ansynchonously send outgoing remote delegates to 
 /// a remote system using UDP.  
@@ -24,7 +24,7 @@ private:
     ~RemoteUdpAsyncSend();
 
     // Binary stream of send data bytes
-    std::ostringstream oss;
+    std::stringstream ss;
 
     // Remote send delegates
     DelegateLib::DelegateRemoteSend1<const RemoteDataPoint&> sendDataPointDelegate;

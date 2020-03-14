@@ -10,7 +10,7 @@ using namespace DelegateLib;
 //----------------------------------------------------------------------------
 // WorkerThread
 //----------------------------------------------------------------------------
-WorkerThread::WorkerThread(const CHAR* threadName) : ThreadWin(threadName, FALSE)
+WorkerThread::WorkerThread(const CHAR* threadName) : ThreadWin(threadName)
 {
 }
 

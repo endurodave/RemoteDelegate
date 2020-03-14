@@ -8,11 +8,7 @@
 #endif
 #include "UdpDelegateRecv.h"
 #include "UdpDelegateSend.h"
-#include "WorkerThreadWin.h"
 #include <iostream>
-
-// TODO - need to clear stream?
-// TODO - test over long periods at full speed for leaks, etc...
 
 // main.cpp
 // @see https://www.codeproject.com/Articles/1160934/Asynchronous-Multicast-Delegates-in-Cplusplus
@@ -37,13 +33,13 @@ int main(void)
     UdpDelegateRecv::GetInstance().Initialize();
 
     // Run a simple test
-    //TestRemoteUdp();
+    TestRemoteUdp();
 
     // Run a simple async test
-    //TestRemoteUdpAsync();
+    TestRemoteUdpAsync();
 
     // Run a test using SysData
-    //TestSysData();
+    TestSysData();
 
     // See RapidJSON_Readme.txt
 #ifdef RAPID_JSON
@@ -54,7 +50,6 @@ int main(void)
 	// Run all unit tests (uncomment to run unit tests)
 	//DelegateUnitTests();
 
-    Sleep(1000);
 	return 0;
 }
 

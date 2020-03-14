@@ -34,14 +34,14 @@ static void RecvNotificationCb(int count, RemoteNotification& data)
 void TestRemoteUdp()
 {
     // Binary stream of send data bytes
-    ostringstream oss(ios::in | ios::out | ios::binary);
+    stringstream ss(ios::in | ios::out | ios::binary);
 
 #if 1
     // Send delegates (using MakeDelegate)
     auto sendDataPointDelegate =
-        MakeDelegate<RemoteDataPoint*>(UpdDelegateSend::GetInstance(), oss, REMOTE_DATA_POINT_ID);
+        MakeDelegate<RemoteDataPoint*>(UpdDelegateSend::GetInstance(), ss, REMOTE_DATA_POINT_ID);
     auto sendNotificationDelegate =
-        MakeDelegate<int, RemoteNotification&>(UpdDelegateSend::GetInstance(), oss, REMOTE_NOTIFICATION_ID);
+        MakeDelegate<int, RemoteNotification&>(UpdDelegateSend::GetInstance(), ss, REMOTE_NOTIFICATION_ID);
 
     // Receive delegates (using MakeDelegate)
     auto recvDataPointDelegate = MakeDelegate(&RecvDataPointCb, REMOTE_DATA_POINT_ID);
@@ -72,7 +72,7 @@ void TestRemoteUdp()
         // Send notification to remote system
         RemoteNotification notification("Hello World!");
         sendNotificationDelegate(count++, notification);
-
-        Sleep(100);
     }
+
+    Sleep(1000);
 }

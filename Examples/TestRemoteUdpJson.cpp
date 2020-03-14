@@ -35,13 +35,13 @@ static void RecvNotificationJsonCb(int count, RemoteNotificationJson& data)
 void TestRemoteUdpJson()
 {
     // Binary stream of send data bytes
-    ostringstream oss(ios::in | ios::out | ios::binary);
+    stringstream ss(ios::in | ios::out | ios::binary);
 
     // Send delegates
     auto sendDataPointDelegate =
-        MakeDelegate<RemoteDataPointJson&>(UpdDelegateSend::GetInstance(), oss, REMOTE_DATA_POINT_JSON_ID);
+        MakeDelegate<RemoteDataPointJson&>(UpdDelegateSend::GetInstance(), ss, REMOTE_DATA_POINT_JSON_ID);
     auto sendNotificationDelegate =
-        MakeDelegate<int, RemoteNotificationJson&>(UpdDelegateSend::GetInstance(), oss, REMOTE_NOTIFICATION_JSON_ID);
+        MakeDelegate<int, RemoteNotificationJson&>(UpdDelegateSend::GetInstance(), ss, REMOTE_NOTIFICATION_JSON_ID);
 
     // Receive delegates
     auto recvDataPointDelegate = MakeDelegate(&RecvDataPointJsonCb, REMOTE_DATA_POINT_JSON_ID);
@@ -61,8 +61,6 @@ void TestRemoteUdpJson()
         RemoteNotificationJson notification("Hello World!");
         notification.GetPoints().push_back(dataPoint);
         sendNotificationDelegate(count++, notification);
-
-        Sleep(1000);
     }
 
     Sleep(1000);

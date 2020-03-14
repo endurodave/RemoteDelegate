@@ -15,7 +15,7 @@ public:
 
     /// Called by the delegate library to invoke a remote delegate
     /// @param[in] s - the stream of bytes to send
-    virtual void DispatchDelegate(std::ostream& s);
+    virtual void DispatchDelegate(std::iostream& s);
 
 private:
     UpdDelegateSend();

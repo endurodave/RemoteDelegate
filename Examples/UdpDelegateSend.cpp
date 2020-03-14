@@ -30,7 +30,7 @@ void UpdDelegateSend::Initialize()
     ASSERT_TRUE(success);
 }
 
-void UpdDelegateSend::DispatchDelegate(std::ostream& s)
+void UpdDelegateSend::DispatchDelegate(std::iostream& s)
 {
     size_t len = (size_t)s.tellp();
     char* sendBuf = (char*)malloc(len);
@@ -43,5 +43,9 @@ void UpdDelegateSend::DispatchDelegate(std::ostream& s)
     ASSERT_TRUE(result == len);
 
     free(sendBuf);
+
+    // Reset stream positions
+    s.seekg(0);
+    s.seekp(0);
 }
 

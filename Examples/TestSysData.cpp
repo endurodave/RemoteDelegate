@@ -27,13 +27,14 @@ static void SystemModeChangedCb(const SystemModeChanged& data)
 void TestSysData()
 {
     sysDataWorkerThread.CreateThread();
+    WorkerThread::StartAllThreads();
 
     // Binary stream of send data bytes
-    ostringstream oss(ios::in | ios::out | ios::binary);
+    stringstream ss(ios::in | ios::out | ios::binary);
 
     // Register to send a remote callback
     SysData::SystemModeChangedDelegate +=
-        MakeDelegate<const SystemModeChanged&>(UpdDelegateSend::GetInstance(), oss, REMOTE_SYSTEM_MODE_CHANGED_ID);
+        MakeDelegate<const SystemModeChanged&>(UpdDelegateSend::GetInstance(), ss, REMOTE_SYSTEM_MODE_CHANGED_ID);
 
     // Create a receive delegate to receive remote callback
     auto recvDataPointDelegate = MakeDelegate(&SystemModeChangedCb, REMOTE_SYSTEM_MODE_CHANGED_ID);
@@ -58,7 +59,7 @@ void TestSysData()
     SysData::SystemModeChangedDelegate -= MakeDelegate(&SystemModeChangedCb, &sysDataWorkerThread);
     SysData::SystemModeChangedDelegate -= MakeDelegate(&SystemModeChangedCb, &sysDataWorkerThread, 5000);
     SysData::SystemModeChangedDelegate -=
-        MakeDelegate<const SystemModeChanged&>(UpdDelegateSend::GetInstance(), oss, REMOTE_SYSTEM_MODE_CHANGED_ID);
+        MakeDelegate<const SystemModeChanged&>(UpdDelegateSend::GetInstance(), ss, REMOTE_SYSTEM_MODE_CHANGED_ID);
 
     sysDataWorkerThread.ExitThread();
 }
