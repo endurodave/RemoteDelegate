@@ -11,10 +11,5 @@
 
 #include <afxwin.h>         // MFC core and standard components
 #include <afxsock.h>
-//#include <afxext.h>         // MFC extensions
-//#include <afxdisp.h>        // MFC Automation classes
-//#include <afxdtctl.h>		// MFC support for Internet 
-
-
 
 // TODO: reference additional headers your program requires here

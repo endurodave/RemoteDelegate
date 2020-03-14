@@ -10,6 +10,18 @@
     <Filter Include="Port">
       <UniqueIdentifier>{3d1793c2-a97a-48ae-be3c-4e862c702d03}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Examples\Async">
+      <UniqueIdentifier>{7175f041-c1fc-428d-8777-9116463d3cd3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Examples\Test">
+      <UniqueIdentifier>{0e6ac713-48f8-4aa9-9cf4-a148594554d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Examples\Transport">
+      <UniqueIdentifier>{a2cbd747-30f4-4ac3-bc08-02b4c2738e07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Examples\Data">
+      <UniqueIdentifier>{6d95afef-741f-48ac-9737-45c7a3f34fc4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\stdafx.h" />
@@ -101,59 +113,56 @@
     <ClInclude Include="..\..\Delegate\DelegateTransport.h">
       <Filter>Delegate</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Examples\RemoteDataPoint.h">
-      <Filter>Examples</Filter>
+    <ClInclude Include="..\..\Examples\Async\RemoteUdpAsyncRecv.h">
+      <Filter>Examples\Async</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Examples\UdpDelegateRecv.h">
-      <Filter>Examples</Filter>
+    <ClInclude Include="..\..\Examples\Async\RemoteUdpAsyncSend.h">
+      <Filter>Examples\Async</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Examples\UdpDelegateSend.h">
-      <Filter>Examples</Filter>
+    <ClInclude Include="..\..\Examples\Data\RemoteDataPoint.h">
+      <Filter>Examples\Data</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Examples\RemoteNotification.h">
-      <Filter>Examples</Filter>
+    <ClInclude Include="..\..\Examples\Data\RemoteDataPointJson.h">
+      <Filter>Examples\Data</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Examples\TestRemoteUdp.h">
-      <Filter>Examples</Filter>
+    <ClInclude Include="..\..\Examples\Data\RemoteId.h">
+      <Filter>Examples\Data</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Examples\RemoteDataPointJson.h">
-      <Filter>Examples</Filter>
+    <ClInclude Include="..\..\Examples\Data\RemoteNotification.h">
+      <Filter>Examples\Data</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Examples\TestRemoteUdpJson.h">
-      <Filter>Examples</Filter>
+    <ClInclude Include="..\..\Examples\Data\RemoteNotificationJson.h">
+      <Filter>Examples\Data</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Examples\RemoteNotificationJson.h">
-      <Filter>Examples</Filter>
+    <ClInclude Include="..\..\Examples\Data\SysData.h">
+      <Filter>Examples\Data</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Examples\SysData.h">
-      <Filter>Examples</Filter>
+    <ClInclude Include="..\..\Examples\Transport\PipeDelegateRecv.h">
+      <Filter>Examples\Transport</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Examples\SysDataTypes.h">
-      <Filter>Examples</Filter>
+    <ClInclude Include="..\..\Examples\Transport\PipeDelegateSend.h">
+      <Filter>Examples\Transport</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Examples\TestSysData.h">
-      <Filter>Examples</Filter>
+    <ClInclude Include="..\..\Examples\Transport\UdpDelegateRecv.h">
+      <Filter>Examples\Transport</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Examples\RemoteId.h">
-      <Filter>Examples</Filter>
+    <ClInclude Include="..\..\Examples\Transport\UdpDelegateSend.h">
+      <Filter>Examples\Transport</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Examples\RemoteUdpAsyncRecv.h">
-      <Filter>Examples</Filter>
+    <ClInclude Include="..\..\Examples\Test\TestRemotePipe.h">
+      <Filter>Examples\Test</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Examples\RemoteUdpAsyncSend.h">
-      <Filter>Examples</Filter>
+    <ClInclude Include="..\..\Examples\Test\TestRemoteUdp.h">
+      <Filter>Examples\Test</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Examples\TestRemoteUdpAsync.h">
-      <Filter>Examples</Filter>
+    <ClInclude Include="..\..\Examples\Test\TestRemoteUdpAsync.h">
+      <Filter>Examples\Test</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Examples\PipeDelegateSend.h">
-      <Filter>Examples</Filter>
+    <ClInclude Include="..\..\Examples\Test\TestRemoteUdpJson.h">
+      <Filter>Examples\Test</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Examples\PipeDelegateRecv.h">
-      <Filter>Examples</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Examples\TestRemotePipe.h">
-      <Filter>Examples</Filter>
+    <ClInclude Include="..\..\Examples\Test\TestSysData.h">
+      <Filter>Examples\Test</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -192,53 +201,53 @@
     <ClCompile Include="..\..\Delegate\DelegateRemoteInvoker.cpp">
       <Filter>Delegate</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Examples\RemoteDataPoint.cpp">
-      <Filter>Examples</Filter>
+    <ClCompile Include="..\..\Examples\Async\RemoteUdpAsyncRecv.cpp">
+      <Filter>Examples\Async</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Examples\UdpDelegateRecv.cpp">
-      <Filter>Examples</Filter>
+    <ClCompile Include="..\..\Examples\Async\RemoteUdpAsyncSend.cpp">
+      <Filter>Examples\Async</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Examples\UdpDelegateSend.cpp">
-      <Filter>Examples</Filter>
+    <ClCompile Include="..\..\Examples\Data\RemoteDataPoint.cpp">
+      <Filter>Examples\Data</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Examples\RemoteNotification.cpp">
-      <Filter>Examples</Filter>
+    <ClCompile Include="..\..\Examples\Data\RemoteDataPointJson.cpp">
+      <Filter>Examples\Data</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Examples\TestRemoteUdp.cpp">
-      <Filter>Examples</Filter>
+    <ClCompile Include="..\..\Examples\Data\RemoteNotification.cpp">
+      <Filter>Examples\Data</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Examples\RemoteDataPointJson.cpp">
-      <Filter>Examples</Filter>
+    <ClCompile Include="..\..\Examples\Data\RemoteNotificationJson.cpp">
+      <Filter>Examples\Data</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Examples\TestRemoteUdpJson.cpp">
-      <Filter>Examples</Filter>
+    <ClCompile Include="..\..\Examples\Data\SysData.cpp">
+      <Filter>Examples\Data</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Examples\RemoteNotificationJson.cpp">
-      <Filter>Examples</Filter>
+    <ClCompile Include="..\..\Examples\Transport\PipeDelegateRecv.cpp">
+      <Filter>Examples\Transport</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Examples\SysData.cpp">
-      <Filter>Examples</Filter>
+    <ClCompile Include="..\..\Examples\Transport\PipeDelegateSend.cpp">
+      <Filter>Examples\Transport</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Examples\TestSysData.cpp">
-      <Filter>Examples</Filter>
+    <ClCompile Include="..\..\Examples\Transport\UdpDelegateRecv.cpp">
+      <Filter>Examples\Transport</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Examples\RemoteUdpAsyncRecv.cpp">
-      <Filter>Examples</Filter>
+    <ClCompile Include="..\..\Examples\Transport\UdpDelegateSend.cpp">
+      <Filter>Examples\Transport</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Examples\RemoteUdpAsyncSend.cpp">
-      <Filter>Examples</Filter>
+    <ClCompile Include="..\..\Examples\Test\TestRemotePipe.cpp">
+      <Filter>Examples\Test</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Examples\TestRemoteUdpAsync.cpp">
-      <Filter>Examples</Filter>
+    <ClCompile Include="..\..\Examples\Test\TestRemoteUdp.cpp">
+      <Filter>Examples\Test</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Examples\PipeDelegateSend.cpp">
-      <Filter>Examples</Filter>
+    <ClCompile Include="..\..\Examples\Test\TestRemoteUdpAsync.cpp">
+      <Filter>Examples\Test</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Examples\PipeDelegateRecv.cpp">
-      <Filter>Examples</Filter>
+    <ClCompile Include="..\..\Examples\Test\TestRemoteUdpJson.cpp">
+      <Filter>Examples\Test</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Examples\TestRemotePipe.cpp">
-      <Filter>Examples</Filter>
+    <ClCompile Include="..\..\Examples\Test\TestSysData.cpp">
+      <Filter>Examples\Test</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
