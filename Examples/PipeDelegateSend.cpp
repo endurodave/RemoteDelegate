@@ -20,6 +20,7 @@ PipeDelegateSend::PipeDelegateSend() : m_hPipe(INVALID_HANDLE_VALUE)
 
 PipeDelegateSend::~PipeDelegateSend()
 {
+    CloseHandle(m_hPipe);
 }
 
 void PipeDelegateSend::Initialize()
