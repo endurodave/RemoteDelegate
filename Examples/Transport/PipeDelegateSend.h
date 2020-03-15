@@ -5,7 +5,7 @@
 #include <ostream>
 
 /// @brief Sends a delegate to a remote system using a named pipe.  
-class PipeDelegateSend : public DelegateLib::DelegateTransport
+class PipeDelegateSend : public DelegateLib::IDelegateTransport
 {
 public:
     static PipeDelegateSend & GetInstance();

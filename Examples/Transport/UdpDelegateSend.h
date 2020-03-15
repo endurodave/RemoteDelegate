@@ -5,7 +5,7 @@
 #include <ostream>
 
 /// @brief Sends a delegate to a remote system using a UDP socket.  
-class UdpDelegateSend : public DelegateLib::DelegateTransport
+class UdpDelegateSend : public DelegateLib::IDelegateTransport
 {
 public:
     static UdpDelegateSend & GetInstance();

@@ -249,5 +249,8 @@
     <ClCompile Include="..\..\Examples\Test\TestSysData.cpp">
       <Filter>Examples\Test</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Delegate\DelegateAsync.cpp">
+      <Filter>Delegate</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
