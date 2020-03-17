@@ -1,9 +1,19 @@
-#include "stdafx.h"
 #include "UdpDelegateSend.h"
 #include "DelegateLib.h"
+#include <unistd.h>
+#include <string.h>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <arpa/inet.h>
+#include <netinet/in.h>
 
 using namespace DelegateLib;
 using namespace std;
+
+#define PORT    514
+
+static int sockfd;
+static sockaddr_in servaddr;
 
 UdpDelegateSend & UdpDelegateSend::GetInstance()
 {
@@ -17,16 +27,19 @@ UdpDelegateSend::UdpDelegateSend()
 
 UdpDelegateSend::~UdpDelegateSend()
 {
-    m_sendSocket.Close();
+    close(sockfd);
 }
 
 void UdpDelegateSend::Initialize()
 {
-    BOOL success = m_sendSocket.Create(0, SOCK_DGRAM, NULL);
-    ASSERT_TRUE(success);
+    sockfd = socket(AF_INET, SOCK_DGRAM, 0);
+    ASSERT_TRUE(sockfd >= 0);
 
-    success = m_sendSocket.Connect(L"localhost", 514);
-    ASSERT_TRUE(success);
+    memset(&servaddr, 0, sizeof(servaddr));
+
+    servaddr.sin_family = AF_INET;
+    servaddr.sin_port = htons(PORT);
+    servaddr.sin_addr.s_addr = INADDR_ANY;
 }
 
 void UdpDelegateSend::DispatchDelegate(std::iostream& s)
@@ -38,8 +51,9 @@ void UdpDelegateSend::DispatchDelegate(std::iostream& s)
     s.rdbuf()->sgetn(sendBuf, len);
 
     // Send data to remote system using a socket
-    int result = m_sendSocket.Send((void*)sendBuf, len, 0);
-    ASSERT_TRUE(result == len);
+    int result = sendto(sockfd, (const char *)sendBuf, len,
+        0, (const struct sockaddr *) &servaddr, sizeof(servaddr));
+    ASSERT_TRUE((size_t)result == len);
 
     free(sendBuf);
 
