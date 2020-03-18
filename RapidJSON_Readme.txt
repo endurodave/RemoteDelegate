@@ -5,6 +5,8 @@ To run the remote delegate JSON samples, do the following:
    
    https://github.com/Tencent/rapidjson/
    
-2) Define RAPID_JSON the Visual Studio project Preprocessor Definitions setting
-   so the JSON samples are compiled and executed.
+2) On Visual Studio, define RAPID_JSON the Visual Studio project Preprocessor Definitions 
+   setting so the JSON samples are compiled and executed.
+   
+   On Eclipse, define RAPID_JSON in Properties > C/C++ General > Paths and Symbols > Symbols tab. 
    
