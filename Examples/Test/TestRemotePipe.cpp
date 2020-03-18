@@ -1,4 +1,6 @@
+#ifdef WIN32
 #include "stdafx.h"
+#endif
 #include "TestRemotePipe.h"
 #include "RemoteId.h"
 #include "RemoteDataPoint.h"
@@ -7,6 +9,8 @@
 #include "PipeDelegateSend.h"
 #include <sstream>
 #include <iostream>
+#include <chrono>
+#include <thread>
 
 // This is a simple example of a remote send and receive delegate
 // calling back functions using a named pipe. 
@@ -54,5 +58,5 @@ void TestRemotePipe()
         sendNotificationDelegate(count++, notification);
     }
 
-    Sleep(1000);
+    std::this_thread::sleep_for(std::chrono::seconds(1));
 }

@@ -1,4 +1,6 @@
+#ifdef WIN32
 #include "stdafx.h"
+#endif
 #include "TestRemoteUdpAsync.h"
 #include "RemoteId.h"
 #include "RemoteUdpAsyncSend.h"
@@ -8,6 +10,8 @@
 #include "UdpDelegateSend.h"
 #include <sstream>
 #include <iostream>
+#include <chrono>
+#include <thread>
 
 // This is a simple example of a remote send and receive delegate
 // combined with asynchronous delegates.
@@ -46,7 +50,7 @@ void TestRemoteUdpAsync()
     RemoteNotification notification("Async RPC using UDP!");
     RemoteUdpAsyncSend::GetInstance().SendNotification(9, notification);
 
-    Sleep(1000);
+    std::this_thread::sleep_for(std::chrono::seconds(1));
 
     workerThread1.ExitThread();
     RemoteUdpAsyncRecv::DataPointRcvd -= MakeDelegate(&RecvDataPointAsyncCb, &workerThread1);

@@ -1,6 +1,8 @@
 #ifdef RAPID_JSON
 
+#ifdef WIN32
 #include "stdafx.h"
+#endif
 #include "TestRemoteUdpJson.h"
 #include "RemoteId.h"
 #include "RemoteDataPointJson.h"
@@ -9,6 +11,8 @@
 #include "UdpDelegateRecv.h"
 #include "UdpDelegateSend.h"
 #include <iostream>
+#include <chrono>
+#include <thread>
 
 // This is a simple example of a remote send and receive delegate
 // calling back functions using JSON. 
@@ -63,7 +67,7 @@ void TestRemoteUdpJson()
         sendNotificationDelegate(count++, notification);
     }
 
-    Sleep(1000);
+    std::this_thread::sleep_for(std::chrono::seconds(1));
 }
 
 #endif // RAPID_JSON

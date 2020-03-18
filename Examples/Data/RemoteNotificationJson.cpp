@@ -2,9 +2,9 @@
 
 #include "Fault.h"
 #include "RemoteNotificationJson.h"
-#include "rapidjson/include/rapidjson/prettywriter.h"
-#include "rapidjson/include/rapidjson/document.h"
-#include "rapidjson/include/rapidjson/stringbuffer.h"
+#include "prettywriter.h"
+#include "document.h"
+#include "stringbuffer.h"
 
 using namespace rapidjson;
 

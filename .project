@@ -26,7 +26,7 @@
 	</natures>
 	<filteredResources>
 		<filter>
-			<id>1584452238764</id>
+			<id>1584540889390</id>
 			<name></name>
 			<type>26</type>
 			<matcher>
@@ -35,7 +35,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1584452238776</id>
+			<id>1584540889420</id>
 			<name></name>
 			<type>6</type>
 			<matcher>
@@ -44,7 +44,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1584452238789</id>
+			<id>1584540889445</id>
 			<name></name>
 			<type>6</type>
 			<matcher>
@@ -53,7 +53,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1584452238803</id>
+			<id>1584540889481</id>
 			<name></name>
 			<type>6</type>
 			<matcher>
@@ -62,7 +62,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1584452238817</id>
+			<id>1584540889508</id>
 			<name></name>
 			<type>6</type>
 			<matcher>
@@ -71,7 +71,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1584452238829</id>
+			<id>1584540889518</id>
 			<name></name>
 			<type>26</type>
 			<matcher>
@@ -80,7 +80,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1584452238844</id>
+			<id>1584540889539</id>
 			<name></name>
 			<type>26</type>
 			<matcher>
@@ -89,12 +89,21 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1584452238857</id>
+			<id>1584540889557</id>
 			<name></name>
-			<type>26</type>
+			<type>22</type>
 			<matcher>
 				<id>org.eclipse.ui.ide.multiFilter</id>
-				<arguments>1.0-name-matches-false-false-Test</arguments>
+				<arguments>1.0-name-matches-false-false-TestRemotePipe.cpp</arguments>
+			</matcher>
+		</filter>
+		<filter>
+			<id>1584540889578</id>
+			<name></name>
+			<type>22</type>
+			<matcher>
+				<id>org.eclipse.ui.ide.multiFilter</id>
+				<arguments>1.0-name-matches-false-false-TestRemoteUdpAsync.cpp</arguments>
 			</matcher>
 		</filter>
 	</filteredResources>

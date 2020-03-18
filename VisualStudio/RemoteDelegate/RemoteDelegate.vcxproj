@@ -90,7 +90,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\.;$(SolutionDir)..\Examples\Data;$(SolutionDir)..\Examples\Test;$(SolutionDir)..\Examples\Transport;$(SolutionDir)..\Examples\Async;$(SolutionDir)..\Delegate;$(SolutionDir)..\Port;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\.;$(SolutionDir)..\Examples\Data;$(SolutionDir)..\Examples\Test;$(SolutionDir)..\Examples\Transport;$(SolutionDir)..\Examples\Async;$(SolutionDir)..\Delegate;$(SolutionDir)..\Port;$(SolutionDir)..\rapidjson\include\rapidjson;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>

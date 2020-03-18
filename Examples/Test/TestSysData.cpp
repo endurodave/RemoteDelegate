@@ -1,13 +1,17 @@
+#ifdef WIN32
 #include "stdafx.h"
+#endif
 #include "TestSysData.h"
 #include "RemoteId.h"
 #include "SysData.h"
 #include "DelegateLib.h"
-#include "WorkerThreadWin.h"
+#include "WorkerThreadStd.h"
 #include "UdpDelegateRecv.h"
 #include "UdpDelegateSend.h"
 #include <sstream>
 #include <iostream>
+#include <chrono>
+#include <thread>
 
 // This is an publish/subscribe example showing different types of 
 // callbacks registered with SysData.
@@ -27,7 +31,6 @@ static void SystemModeChangedCb(const SystemModeChanged& data)
 void TestSysData()
 {
     sysDataWorkerThread.CreateThread();
-    WorkerThread::StartAllThreads();
 
     // Binary stream of send data bytes
     stringstream ss(ios::in | ios::out | ios::binary);
@@ -52,7 +55,7 @@ void TestSysData()
     SysData::GetInstance().SetSystemMode(SystemMode::STARTING);
     SysData::GetInstance().SetSystemMode(SystemMode::NORMAL);
 
-    Sleep(1000);
+    std::this_thread::sleep_for(std::chrono::seconds(1));
 
     // Unregister all callbacks
     SysData::SystemModeChangedDelegate -= MakeDelegate(&SystemModeChangedCb);
