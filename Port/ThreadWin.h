@@ -35,7 +35,7 @@ public:
 	/// @param[in] threadName - a user defined thread name.	
 	/// @param[in] syncStart - TRUE to synchronize the threads to start at the same  
 	///		time after StartAllThreads() is called. FALSE thread starts immediately. 
-	ThreadWin (const CHAR* threadName, BOOL syncStart = TRUE);
+	ThreadWin (const CHAR* threadName, BOOL syncStart = FALSE);
 
 	/// Destructor
 	virtual ~ThreadWin ();

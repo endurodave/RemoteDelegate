@@ -1,4 +1,6 @@
+#ifdef WIN32
 #include "stdafx.h"
+#endif
 #include "RemoteUdpAsyncSend.h"
 #include "RemoteId.h"
 #include "DelegateLib.h"
@@ -34,7 +36,7 @@ void RemoteUdpAsyncSend::SendDataPoint(const RemoteDataPoint& data)
     // If caller is not executing on asyncWorkerThread then re-invoke 
     // the function call on the correct thread using a delegate.
     // Delete these two lines if prefer synchronous sending. 
-    if (ThreadWin::GetCurrentThreadId() != asyncWorkerThread.GetThreadId())
+    if (WorkerThread::GetCurrentThreadId() != asyncWorkerThread.GetThreadId())
         return MakeDelegate(this, &RemoteUdpAsyncSend::SendDataPoint, &asyncWorkerThread)(data);
 
     // Sending data to remote is always executed on asyncWorkerThread
@@ -46,7 +48,7 @@ void RemoteUdpAsyncSend::SendNotification(int count, const RemoteNotification& d
     // If caller is not executing on asyncWorkerThread then re-invoke 
     // the function call on the correct thread using a delegate.
     // Delete these two lines if prefer synchronous sending. 
-    if (ThreadWin::GetCurrentThreadId() != asyncWorkerThread.GetThreadId())
+    if (WorkerThread::GetCurrentThreadId() != asyncWorkerThread.GetThreadId())
         return MakeDelegate(this, &RemoteUdpAsyncSend::SendNotification, &asyncWorkerThread)(count, data);
 
     // Sending data to remote is always executed on asyncWorkerThread

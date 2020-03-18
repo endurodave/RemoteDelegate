@@ -33,7 +33,6 @@ void TestRemoteUdpAsync()
 {
     WorkerThread workerThread1("workerThread1");
     workerThread1.CreateThread();
-    WorkerThread::StartAllThreads();
 
     RemoteUdpAsyncRecv::GetInstance();
     RemoteUdpAsyncSend::GetInstance();

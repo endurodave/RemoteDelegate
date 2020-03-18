@@ -1,4 +1,6 @@
+#ifdef WIN32
 #include "stdafx.h"
+#endif
 #include "RemoteUdpAsyncRecv.h"
 #include "RemoteId.h"
 #include "DelegateLib.h"

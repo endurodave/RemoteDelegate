@@ -26,8 +26,9 @@
 							<tool id="cdt.managedbuild.tool.gnu.archiver.cygwin.base.1376617712" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.cygwin.base"/>
 							<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.cygwin.base.1474241580" name="Cygwin C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.cygwin.base">
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.compiler.option.include.paths.1244882543" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;../.\Examples\Async&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;../.\Examples\Data&quot;"/>
-									<listOptionValue builtIn="false" value="../Examples/Test"/>
+									<listOptionValue builtIn="false" value="&quot;../.\Examples\Test&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;../.\Examples\TransportPosix&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;../.\Port&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;../.\Delegate&quot;"/>

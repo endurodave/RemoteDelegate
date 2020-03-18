@@ -1,5 +1,6 @@
 #include "Fault.h"
 #include "TestRemoteUdp.h"
+#include "TestRemoteUdpAsync.h"
 #include "TestSysData.h"
 #ifdef RAPID_JSON
 #include "TestRemoteUdpJson.h"
@@ -29,14 +30,17 @@ int main(void)
     // Run a simple test
     TestRemoteUdp();
 
-    // Run a test using SysData
-    TestSysData();
-
     // See RapidJSON_Readme.txt
 #ifdef RAPID_JSON
     // Run a JSON test
     TestRemoteUdpJson();
 #endif
+
+    // Run an async test
+    TestRemoteUdpAsync();
+
+    // Run a test using SysData
+    TestSysData();
 
 	// Run all unit tests (uncomment to run unit tests)
 	//DelegateUnitTests();
