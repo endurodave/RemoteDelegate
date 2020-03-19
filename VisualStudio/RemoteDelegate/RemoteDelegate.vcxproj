@@ -171,6 +171,7 @@
     <ClInclude Include="..\..\Examples\Async\RemoteUdpAsyncRecv.h" />
     <ClInclude Include="..\..\Examples\Async\RemoteUdpAsyncSend.h" />
     <ClInclude Include="..\..\Examples\Data\RemoteDataPoint.h" />
+    <ClInclude Include="..\..\Examples\Data\RemoteDataPointBinary.h" />
     <ClInclude Include="..\..\Examples\Data\RemoteDataPointJson.h" />
     <ClInclude Include="..\..\Examples\Data\RemoteId.h" />
     <ClInclude Include="..\..\Examples\Data\RemoteNotification.h" />
@@ -207,6 +208,7 @@
     <ClCompile Include="..\..\Examples\Async\RemoteUdpAsyncRecv.cpp" />
     <ClCompile Include="..\..\Examples\Async\RemoteUdpAsyncSend.cpp" />
     <ClCompile Include="..\..\Examples\Data\RemoteDataPoint.cpp" />
+    <ClCompile Include="..\..\Examples\Data\RemoteDataPointBinary.cpp" />
     <ClCompile Include="..\..\Examples\Data\RemoteDataPointJson.cpp" />
     <ClCompile Include="..\..\Examples\Data\RemoteNotification.cpp" />
     <ClCompile Include="..\..\Examples\Data\RemoteNotificationJson.cpp" />

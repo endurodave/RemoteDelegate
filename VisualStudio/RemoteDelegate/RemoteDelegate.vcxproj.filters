@@ -164,6 +164,9 @@
     <ClInclude Include="..\..\Examples\Test\TestSysData.h">
       <Filter>Examples\Test</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Examples\Data\RemoteDataPointBinary.h">
+      <Filter>Examples\Data</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\main.cpp" />
@@ -251,6 +254,9 @@
     </ClCompile>
     <ClCompile Include="..\..\Delegate\DelegateAsync.cpp">
       <Filter>Delegate</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Examples\Data\RemoteDataPointBinary.cpp">
+      <Filter>Examples\Data</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

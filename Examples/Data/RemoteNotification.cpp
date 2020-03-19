@@ -6,16 +6,11 @@
 
 std::ostream& operator<< (std::ostream &out, const RemoteNotification& data)
 {
-    size_t size = data.m_msg.size();
-    out.write(reinterpret_cast<char*>(&size), sizeof(size_t));
-    out.write(data.m_msg.c_str(), size);
+    out << data.m_msg << std::endl;
     return out;
 }
 std::istream& operator>> (std::istream &in, RemoteNotification& data)
 {
-    size_t size = 0;
-    in.read(reinterpret_cast<char*>(&size), sizeof(size_t));
-    data.m_msg.resize(size);
-    in.read(const_cast<char*>(data.m_msg.c_str()), size);
+    std::getline(in, data.m_msg);
     return in;
 }

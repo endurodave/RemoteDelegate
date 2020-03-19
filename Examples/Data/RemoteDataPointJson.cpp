@@ -16,21 +16,17 @@ std::ostream& operator<< (std::ostream &out, const RemoteDataPointJson& data)
     data.Serialize(writer);
 
     // Add JSON length 
-    // Note: Sender handle endianness here for binary bufLen if necessary
-    size_t bufLen = sb.GetLength() + 1;
-    out.write(reinterpret_cast<const char*>(&bufLen), sizeof(size_t));
+    out << sb.GetLength() + 1; 
 
     // Add JSON string
     out << sb.GetString();
-    out << std::ends;
     return out;
 }
 std::istream& operator>> (std::istream &in, RemoteDataPointJson& data)
 {
     // Get JSON length
-    // Note: Receiver handle endianness here for binary bufLen if necessary
     size_t bufLen = 0;
-    in.read(reinterpret_cast<char*>(&bufLen), sizeof(size_t));
+    in >> bufLen;
 
     // Allocate storage buffer
     char* buf = (char*)malloc(bufLen);

@@ -16,8 +16,8 @@ public:
     int GetY() const { return m_y; }
 
 private:
-    int m_y;
     int m_x;
+    int m_y;
 
     // Insert or extract any stream any type of RemoteDataPoint. You normally only 
     // need to define one insertion and one extraction function. These example just
