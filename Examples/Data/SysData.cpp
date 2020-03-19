@@ -2,15 +2,18 @@
 
 std::ostream& operator<< (std::ostream &out, const SystemModeChanged& data)
 {
-    out.write(reinterpret_cast<const char*>(&data.PreviousSystemMode), sizeof(SystemMode::Type));
-    out.write(reinterpret_cast<const char*>(&data.CurrentSystemMode), sizeof(SystemMode::Type));
+    out << data.PreviousSystemMode << std::endl;
+    out << data.CurrentSystemMode << std::endl; 
     return out;
 }
 std::istream& operator>> (std::istream &in, const SystemModeChanged& data)
 {
     SystemModeChanged& d = const_cast<SystemModeChanged&>(data);
-    in.read(reinterpret_cast<char*>(&d.PreviousSystemMode), sizeof(SystemMode::Type));
-    in.read(reinterpret_cast<char*>(&d.CurrentSystemMode), sizeof(SystemMode::Type));
+    int mode;
+    in >> mode; 
+    d.PreviousSystemMode = static_cast<SystemMode::Type>(mode);
+    in >> mode;
+    d.CurrentSystemMode = static_cast<SystemMode::Type>(mode);
     return in;
 }
 
