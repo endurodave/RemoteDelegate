@@ -85,7 +85,8 @@ public:
 
         Param1 p1 = param1.Get();
 
-        stream.read(reinterpret_cast<char*>(&m_id), sizeof(DelegateIdType));
+        stream >> m_id;
+        stream.seekg(stream.tellg() + std::streampos(1));
         stream >> p1;
         stream.seekg(stream.tellg() + std::streampos(1));
 
@@ -144,7 +145,8 @@ public:
         Param1 p1 = param1.Get();
         Param2 p2 = param2.Get();
 
-        stream.read(reinterpret_cast<char*>(&m_id), sizeof(DelegateIdType));
+        stream >> m_id;
+        stream.seekg(stream.tellg() + std::streampos(1));
         stream >> p1;
         stream.seekg(stream.tellg() + std::streampos(1));
         stream >> p2;
@@ -207,7 +209,8 @@ public:
         Param2 p2 = param2.Get();
         Param3 p3 = param3.Get();
 
-        stream.read(reinterpret_cast<char*>(&m_id), sizeof(DelegateIdType));
+        stream >> m_id;
+        stream.seekg(stream.tellg() + std::streampos(1));
         stream >> p1;
         stream.seekg(stream.tellg() + std::streampos(1));
         stream >> p2;
@@ -274,7 +277,8 @@ public:
         Param3 p3 = param3.Get();
         Param4 p4 = param4.Get();
 
-        stream.read(reinterpret_cast<char*>(&m_id), sizeof(DelegateIdType));
+        stream >> m_id;
+        stream.seekg(stream.tellg() + std::streampos(1));
         stream >> p1;
         stream.seekg(stream.tellg() + std::streampos(1));
         stream >> p2;
@@ -345,7 +349,8 @@ public:
         Param4 p4 = param4.Get();
         Param4 p5 = param5.Get();
 
-        stream.read(reinterpret_cast<char*>(&m_id), sizeof(DelegateIdType));
+        stream >> m_id;
+        stream.seekg(stream.tellg() + std::streampos(1));
         stream >> p1;
         stream.seekg(stream.tellg() + std::streampos(1));
         stream >> p2;
@@ -393,7 +398,8 @@ public:
 
         Param1 p1 = param1.Get();
 
-        stream.read(reinterpret_cast<char*>(&m_id), sizeof(DelegateIdType));
+        stream >> m_id;
+        stream.seekg(stream.tellg() + std::streampos(1));
         stream >> p1;
         stream.seekg(stream.tellg() + std::streampos(1));
 
@@ -435,7 +441,8 @@ public:
         Param1 p1 = param1.Get();
         Param2 p2 = param2.Get();
 
-        stream.read(reinterpret_cast<char*>(&m_id), sizeof(DelegateIdType));
+        stream >> m_id;
+        stream.seekg(stream.tellg() + std::streampos(1));
         stream >> p1;
         stream.seekg(stream.tellg() + std::streampos(1));
         stream >> p2;
@@ -481,7 +488,8 @@ public:
         Param2 p2 = param2.Get();
         Param3 p3 = param3.Get();
 
-        stream.read(reinterpret_cast<char*>(&m_id), sizeof(DelegateIdType));
+        stream >> m_id;
+        stream.seekg(stream.tellg() + std::streampos(1));
         stream >> p1;
         stream.seekg(stream.tellg() + std::streampos(1));
         stream >> p2;
@@ -531,7 +539,8 @@ public:
         Param3 p3 = param3.Get();
         Param4 p4 = param4.Get();
 
-        stream.read(reinterpret_cast<char*>(&m_id), sizeof(DelegateIdType));
+        stream >> m_id;
+        stream.seekg(stream.tellg() + std::streampos(1));
         stream >> p1;
         stream.seekg(stream.tellg() + std::streampos(1));
         stream >> p2;
@@ -585,7 +594,8 @@ public:
         Param4 p4 = param4.Get();
         Param5 p5 = param5.Get();
 
-        stream.read(reinterpret_cast<char*>(&m_id), sizeof(DelegateIdType));
+        stream >> m_id;
+        stream.seekg(stream.tellg() + std::streampos(1));
         stream >> p1;
         stream.seekg(stream.tellg() + std::streampos(1));
         stream >> p2;

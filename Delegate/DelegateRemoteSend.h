@@ -22,7 +22,7 @@ public:
 
 	/// Invoke the bound delegate function. 
 	virtual void operator()(Param1 p1) {
-        m_stream.write(reinterpret_cast<const char*>(&m_id), sizeof(DelegateIdType));
+        m_stream << m_id << std::ends;
         m_stream << p1 << std::ends;
         m_transport.DispatchDelegate(m_stream);
     }
@@ -49,7 +49,7 @@ public:
 
     /// Invoke the bound delegate function. 
     virtual void operator()(Param1 p1, Param2 p2) {
-        m_stream.write(reinterpret_cast<const char*>(&m_id), sizeof(DelegateIdType));
+        m_stream << m_id << std::ends;
         m_stream << p1 << std::ends;
         m_stream << p2 << std::ends;
         m_transport.DispatchDelegate(m_stream);
@@ -78,7 +78,7 @@ public:
 
     /// Invoke the bound delegate function. 
     virtual void operator()(Param1 p1, Param2 p2, Param3 p3) {
-        m_stream.write(reinterpret_cast<const char*>(&m_id), sizeof(DelegateIdType));
+        m_stream << m_id << std::ends;
         m_stream << p1 << std::ends;
         m_stream << p2 << std::ends;
         m_stream << p3 << std::ends;
@@ -108,7 +108,7 @@ public:
 
     /// Invoke the bound delegate function. 
     virtual void operator()(Param1 p1, Param2 p2, Param3 p3, Param4 p4) {
-        m_stream.write(reinterpret_cast<const char*>(&m_id), sizeof(DelegateIdType));
+        m_stream << m_id << std::ends;
         m_stream << p1 << std::ends;
         m_stream << p2 << std::ends;
         m_stream << p3 << std::ends;
@@ -139,7 +139,7 @@ public:
 
     /// Invoke the bound delegate function. 
     virtual void operator()(Param1 p1, Param2 p2, Param3 p3, Param4 p4, Param5 p5) {
-        m_stream.write(reinterpret_cast<const char*>(&m_id), sizeof(DelegateIdType));
+        m_stream << m_id << std::ends;
         m_stream << p1 << std::ends;
         m_stream << p2 << std::ends;
         m_stream << p3 << std::ends;
