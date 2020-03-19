@@ -13,6 +13,9 @@
 // main.cpp
 // @see https://www.codeproject.com/Articles/5262271/Remote-Procedure-Calls-using-Cplusplus-Delegates
 // David Lafreniere, Mar 2020.
+//
+// @see https://www.codeproject.com/Articles/1160934/Asynchronous-Multicast-Delegates-in-Cplusplus
+// David Lafreniere, Dec 2016.
 
 using namespace DelegateLib;
 using namespace std;
