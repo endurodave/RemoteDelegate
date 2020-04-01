@@ -709,10 +709,8 @@ private:
 <p>To run the JSON examples, you&rsquo;ll need to:</p>
 
 <ol>
-	<li>Clone the <code>RapidJSON</code> library into a <em>rapidjson</em> directory within your <em>RemoteDelegate</em> source directory.
-
+	<li>Clone the <code>RapidJSON</code> library into a <em>rapidjson</em> directory within your <em>RemoteDelegate</em> source directory.</li>
 	<p><a href="https://github.com/Tencent/rapidjson/">https://github.com/Tencent/rapidjson/</a></p>
-	</li>
 	<li>Define <strong>RAPID_JSON</strong> in the <strong>C/C++ &gt; Preprocessor &gt; Preprocessor Definitions</strong> within Visual Studio.</li>
 </ol>
 
@@ -723,10 +721,8 @@ private:
 <p>To run the JSON examples, you&rsquo;ll need to:</p>
 
 <ol>
-	<li>Clone the <code>RapidJSON</code> library into a <em>rapidjson</em> directory within your <em>RemoteDelegate</em> source directory.
-
+	<li>Clone the <code>RapidJSON</code> library into a <em>rapidjson</em> directory within your <em>RemoteDelegate</em> source directory.</li>
 	<p><a href="https://github.com/Tencent/rapidjson/">https://github.com/Tencent/rapidjson/</a></p>
-	</li>
 	<li>Define <strong>RAPID_JSON </strong>in <strong>Properties &gt; C/C++ General &gt; Paths and Symbols &gt; Symbols</strong> tab.</li>
 </ol>
 
