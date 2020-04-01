@@ -742,27 +742,6 @@ private:
 	<li><a href="https://www.codeproject.com/Articles/1160934/Asynchronous-Multicast-Delegates-in-Cplusplus">Asynchronous Multicast Delegates in C++</a> - by David Lafreniere</li>
 </ul>
 
-<h2>History</h2>
-
-<ul>
-	<li>15<sup>th</sup> March, 2020
-
-	<ul>
-		<li>Initial release.</li>
-	</ul>
-	</li>
-	<li>18<sup>th</sup> March, 2020
-	<ul>
-		<li>Added Eclipse/POSIX examples.</li>
-	</ul>
-	</li>
-	<li>19<sup>th</sup> March, 2020
-	<ul>
-		<li>Fixed built-in data type handling.&nbsp;</li>
-	</ul>
-	</li>
-	<li>&nbsp;</li>
-</ul>
 
 
 
