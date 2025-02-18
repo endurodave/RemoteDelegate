@@ -3,6 +3,14 @@ A C++ standards compliant delegate library capable of invoking a callable delega
 
 See CodeProject article at: <a href="https://www.codeproject.com/Articles/5262271/Remote-Procedure-Calls-using-Cplusplus-Delegates"><strong>Remote Procedure Calls using C++ Delegates</strong></a>
 
+## ⚠️ Deprecated Repository
+
+> **Warning:** This repository is no longer maintained. Please use the modern delegate library in link below.
+
+## New Repository 
+
+[DelegateMQ](https://github.com/endurodave/DelegateMQ) - Invoke any C++ callable function synchronously, asynchronously, or on a remote endpoint.
+
 <h2>Introduction</h2>
 
 <p>C++ delegates simplify usage of a publish/subscribe pattern. With delegates, client code anonymously registers a callback function pointer to receive runtime notification. In other languages, delegates are a first class-feature and built into the language. Not so in C++ which leaves developers to create custom libraries to emulate delegates.</p>
